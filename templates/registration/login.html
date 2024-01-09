@@ -1,0 +1,55 @@
+
+{% block content %}
+{% load static %}
+<link rel="shortcut icon" href="{% static 'css/ttlicon.ico' %}">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700;800;1000&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" href='{% static "css/login.css" %}'>
+<style>
+
+</style>
+<title>Login</title>
+<style>
+    img{
+    height: 100px;
+    width: auto;
+}
+@media (max-width:1600px) {
+    .flex{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        row-gap: 4px;
+    }
+    #link{
+        width:40%;
+        margin: auto;
+        height: auto;
+    }
+
+}
+
+
+
+</style>
+<body>
+<center><div class="grid">
+    <img src="{% static 'css/logo.png' %}" alt="logo">  
+    <p>Enter the relavent login details</p>
+      
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="flex">
+        <button id="link" type="submit" >Log In</button>
+        <a id="link" href="{% url 'register' %}">Create Account</a>
+        </div>
+    </form>
+</div></center>
+</body>
+
+
+{% endblock %}

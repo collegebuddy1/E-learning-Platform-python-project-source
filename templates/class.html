@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href='{% static "css/class.css" %}'>
+<title>{{ class.name }}</title>
+{% include "nav.html" %}
+<h1 >{{ class.name }}</h1>
+<h1>{{ class.lecturer }}</h1>
+
+<div class="container">
+
+    {% if class.description %}
+<div class="grid-item"><p>{{ class.desciption }}</p></div>
+{% else %}
+<div class="grid-item"><p>No desciption is available.</p></div>
+{% endif %}
+<div class="grid-item">
+    <h2 id="time">{{ class.time }}</h2> <br><br>
+    <center><a id="link" href="{{ class.zoom_url }}">Join class</a></div></center>
+</div>
+
+</div>
+{% include "footer.html" %}
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+
+{% block content %}
+<title>Edit Profile</title>
+{% include "nav.html" %}
+{% load static %}
+<style>
+
+form{
+    text-align: center;
+}
+
+h1{
+    text-align: center;
+    font-family: "Comfortaa";
+    font-size: 35px;
+    padding-bottom: 20px;
+
+
+}
+
+.container{
+
+    font-family: "Comfortaa", sans-serif;
+    align-self:center;
+    display: block;
+    background-color: #b197fc;
+    height: auto;
+    width: 50%;
+    padding-bottom: 20px;
+    display: inline-block;
+    padding-bottom: 30px;
+    border-radius: 20px;
+
+    
+}
+    
+input {
+    width: 50%;
+    padding: 15px 15px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid rgb(203, 180, 180);
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 20px;
+  }
+
+
+
+.grid-container{
+    font-size: 30px;
+    padding: 20px;
+    display: inline-block
+}
+#link {
+    background-color: #7950f2;
+    border: none;
+    color: white;
+    padding: 16px 50px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: "Comfortaa", sans-serif;
+
+
+}
+
+#link:hover {
+    color: black;
+    background-color: #bfaaff;
+
+}
+h3{
+    text-align: left;
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+    padding-top: 20px;
+}
+@media (max-width:1150px) {
+    .flex{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        row-gap: 4px;
+    }
+    #link{
+        width:auto;
+        margin: auto;
+        height: auto;
+    }
+
+}
+
+
+
+</style>
+<br>
+<h1>Edit profile</h1>
+<div>
+    <form method="POST" >
+        {% csrf_token %}
+        <div class="container" >
+    
+            <h3 class='grid-container' >E-mail</h3><br>
+            <div class="forms"> {{ form.email }} </div>
+            <h3 class='grid-container' >UserName</h3><br>
+            <div class="forms"> {{ form.username }} </div>
+            <h3 class='grid-container' >First Name</h3><br>
+            <div class="forms"> {{ form.first_name }} </div>
+            <h3 class='grid-container' >Last Name</h3><br>
+            <div class="forms"> {{ form.last_name }} </div>
+            <div class="flex">
+            <br><a id="link" href="{% url 'password' %}">Change password</a>
+            <br><br>
+            <button id="link" >update</button>
+            </div>
+            
+        </div>
+
+    </form>
+</div>
+{% include "footer.html" %}
+
+
+{% endblock %}

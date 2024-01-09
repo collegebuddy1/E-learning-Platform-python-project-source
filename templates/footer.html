@@ -1,0 +1,146 @@
+<style>
+    .footer {
+  height: 280;
+  width: 100%;
+  background-color: #522cc2;
+  display: grid;
+  padding: 50px;
+  margin-top: 100px;
+  /* padding-bottom: 70px; */
+  grid-template-columns: 400px 1fr 40pxr 2fr;
+  grid-template-rows: 30px 30px 30px 30px;
+  align-items: end;
+}
+.ftr-lnk:link,
+.ftr-lnk:visited {
+  padding-left: 10px;
+  color: #9074e4;
+}
+
+.ftr-lnk:hover,
+.ftr-lnk:active {
+  color: #ccc2f0;
+}
+.ftr-wrd {
+  padding-left: 10px;
+  color: #9074e4;
+}
+.ftr-logo {
+  height: 120px;
+  width: auto;
+  grid-row: 1/-1;
+}
+
+.fhome {
+  grid-row: 1;
+  grid-column: 2;
+}
+.flecturer {
+  grid-row: 2;
+  grid-column: 2;
+}
+.faboutus {
+  grid-row: 3;
+  grid-column: 2;
+}
+.flogin {
+  grid-row: 4;
+  grid-column: 2;
+}
+.fcontact {
+  grid-row: 1;
+  grid-column: 3;
+}
+.fnumber1 {
+  grid-row: 2;
+  grid-column: 3;
+}
+.fnumber2 {
+  grid-row: 3;
+  grid-column: 3;
+}
+.femail {
+  grid-row: 4;
+  grid-column: 3;
+}
+
+.smicon {
+  align-self: center;
+  padding-left: 100px;
+  height: 30px;
+  width: auto;
+}
+.fbico {
+  grid-row: 1;
+}
+.instaico {
+  grid-row: 2;
+}
+.twtico {
+  grid-row: 3;
+}
+.ytico {
+  grid-row: 4;
+}
+
+.fb {
+  grid-row: 1;
+}
+.insta {
+  grid-row: 2;
+}
+.twt {
+  grid-row: 3;
+}
+.yt {
+  grid-row: 4;
+}
+
+.line {
+  margin: 20px;
+}
+.lastline {
+  font-size: 15px;
+  color: #9074e4;
+  display: inline-block;
+
+  background-color: #522cc2;
+  padding: 20px;
+  padding-left: 65px;
+
+  width: 100%;
+}
+@media (max-width:920px) {
+  .ftr-logo{display: none;}
+}
+
+</style>
+{% load static %}
+
+</section>
+<section class="footer">
+  <img src="{% static 'css/logo.png' %}" class="ftr-logo" alt="logo image">
+  <a href="{% url 'home' %}" class="ftr-lnk fhome">Home</a>
+  <a href="{% url 'lecturers' %}" class="ftr-lnk flecturer">lecturers</a>
+  <a href="{% url 'about' %}" class="ftr-lnk faboutus">About us</a>
+  {% if user.is_authenticated %}
+  <a href="{% url 'profile' %}" class="ftr-lnk flogin">Profile</a>
+  {% else %}
+  <a href="{% url 'login' %}" class="ftr-lnk flogin">Login</a>
+  {% endif %}
+
+  <p class="ftr-wrd fcontact">Contact</p>
+  <p class="ftr-wrd fnumber1">+94776479952</p>
+  <p class="ftr-wrd fnumber2">+94720968852</p>
+  <p class="ftr-wrd femail">alo@elearning.com</p>
+  <img src="{% static 'css/smf.png' %}" class="smicon fbico" alt="facebook icon">
+  <!-- <span class="fb">facebook</span> -->
+  <img src="{% static 'css/smi.png' %}" class="smicon instaico" alt="intagram icon">
+  <!-- <span class="insta">instagram</span> -->
+  <img src="{% static 'css/smt.png' %}" class="smicon twtico" alt="twitter icon">
+  <!-- <span class="twt">twitter</span> -->
+  <img src="{% static 'css/smy.png' %}" class="smicon ytico" alt="youtube icon">
+  <!-- <span class="yt">youtube</span> -->
+  
+</section>
+<span class="lastline">© 2022 Alo, Inc.</span>

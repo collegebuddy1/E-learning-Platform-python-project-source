@@ -1,0 +1,154 @@
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Alo | E-Learning Platform</title>
+    {% load static %}
+    <link rel="shortcut icon" href="{% static 'css/ttlicon.ico' %}">
+
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700;800;1000&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+
+    @media only screen and (max-width: 1200px) {
+      .sub-section{
+        display: flex;
+        flex-direction: column;
+        row-gap: 15px;
+      }
+    }
+
+      
+    </style>
+  </head>
+  <body>
+    {% include "nav.html" %}
+    <header>
+        
+      <div class="section-1">
+        <p class="first-line">Learn. Anywhere. Anytime.</p>
+        <h1>
+          Start your journey to success with <br />
+          <strong class="alo-elearning">alo e-learning</strong>
+        </h1>
+        {% if user.is_authenticated %}
+
+        {% else %}
+        <a href="{% url 'register' %}" class="start-btn">Get started</a>
+        {% endif %}
+
+
+        <!-- <img src="1-start.png" class="1-img" /> -->
+      </div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="arrow-down"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M19 9l-7 7-7-7"
+        />
+      </svg>
+    </header>
+    <section class="section-2">
+      <h2>Subject choices</h2>
+      <div class="sub-section">
+        <div class="subs">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="subs-icon"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+            />
+          </svg>
+          <p>Science</p>
+        </div>
+        <div class="subs">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="subs-icon"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+            />
+          </svg>
+          </svg>
+          <p>Mathematics</p>
+        </div>
+        <div class="subs">
+          <svg xmlns="http://www.w3.org/2000/svg" class="subs-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+        </svg>
+          <p>ICT</p>
+        </div>
+        <div class="subs">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="subs-icon"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+            />
+          </svg>
+          <p>Business</p>
+        </div>
+        <div class="subs">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="subs-icon"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+          <p>Accounts</p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
+{% include "footer.html" %}
+
+
+
+{% endblock %}

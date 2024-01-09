@@ -1,0 +1,16 @@
+
+
+input[type=text] {
+    width: 30%;
+    padding: 15px 15px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid rgb(203, 180, 180);
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 20px;
+  }
+
+.grid-container{
+    font-size: 30px;
+}

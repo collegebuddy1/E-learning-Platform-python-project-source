@@ -1,0 +1,63 @@
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href='{% static "css/style1.css" %}'>
+<style>
+  @media only screen and (max-width: 1250px) {
+  nav,header,span,a {
+  }
+  nav{
+    width: auto;
+    gap: 10px;
+  }
+  nav a{
+    width: auto;
+  }
+}
+@media only screen and (max-width: 1250px) {
+  nav{
+    gap: 5px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  nav .status{
+    visibility: hidden;
+  }
+}
+@media only screen and (max-width: 900px) {
+  nav{
+    flex-direction: column;
+    height: auto;              
+  }
+}
+
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700;800;1000&display=swap" rel="stylesheet"/>
+    <link href="style.css" rel="stylesheet" />
+      <nav>
+        <div class="nav-logo">alo</div>
+        {% if user.is_authenticated %}
+        <span class="status">Hi, {{ user.username }}</span>
+        {% else %}
+        <span class="status">Hi, Guest</span>
+        {% endif %}
+
+
+        <a href="{% url 'home' %}" class="nav-el">Home</a>
+        <a href="{% url 'lecturers' %}" class="nav-el">Lecturers</a>
+        <a href="{% url 'about' %}" class="nav-el">About us</a>
+        {% if user.is_authenticated %}
+        <a href="{% url 'profile' %}" class="nav-el">Profile</a>
+        <a href="{% url 'session' %}" class="nav-el">Sessions</a>
+        <a href="{% url 'logout' %}" class="nav-el">Logout</a>
+        {% else %}
+        <a href="{% url 'register' %}" class="nav-el login-btn">Sign Up</a>
+        <a href="{% url 'login' %}" class="nav-el login-btn">Login</a>
+        {% endif %}
+
+
+      </nav>
+

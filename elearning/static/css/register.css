@@ -1,0 +1,63 @@
+body {
+    background-image: url(bg6.jpg);
+}
+
+h1{
+    font-family: "Comfortaa", sans-serif;
+    font-size: 35px;
+    align-self: center;
+}
+.grid{
+    height: 50%;
+    width: 30%;
+    text-align: center;
+    background-color: #9775fa;
+    border-radius: 30px;
+    font-size:30px ;
+    padding:30px;
+    font-family: "Comfortaa", sans-serif;
+    text-align: center;
+}
+
+input[type=text],input[type=password], select {
+    width: 30%;
+    padding: 15px 15px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid rgb(203, 180, 180);
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 20px;
+  }
+
+  #link {
+    background-color: #7950f2;
+    border: none;
+    color: white;
+    padding: 16px 50px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: "Comfortaa", sans-serif;
+
+
+}
+
+#link:hover {
+    color: black;
+    background-color: #b197fc;
+
+}
+
+.flex{
+    display: flex;
+    justify-content: space-around;
+    row-gap: 10px;
+}
+
+.image{
+    height: 50px;
+    width: 60px;
+}

@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+
+{% block content %}
+<title>{{ lecturer.name }}</title>
+{% include "nav.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>title</title>
+    <link rel="shortcut icon" type="image/x-icon" href="ttlicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700;800;1000&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "comfortaa", sans-serif;
+        color: #343a40;
+      }
+
+      .container {
+        margin: 60px 100px;
+        background-color: #8ad0ff;
+        border-radius: 24px;
+        box-shadow: 0px 0px 24px #00000080;
+        display: flex;
+        /* align-content: center; */
+        height: 30%;
+      }
+
+      .description-tile {
+        background-color: azure;
+        border-radius: 12px;
+        margin: 10px;
+      }
+      .lect-name-tile {
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+      }
+      .lect-img {
+        background-color: #7950f2;
+        margin: 20px 10px;
+        border-radius: 12px;
+
+        height: 200px;
+        width: 200px;
+      }
+      .lctname {
+        color: #fff;
+        background-color: #7950f2;
+
+        margin: 20px 10px;
+        padding: 20px 40px;
+        border-radius: 40px;
+        font-size: 35px;
+      }
+
+      .lect-sub {
+        color: #fff;
+        background-color: #7950f2;
+        margin: 20px 10px;
+        padding: 20px 40px;
+        border-radius: 40px;
+        font-size: 35px;
+      }
+
+      .discription-para {
+        color: #343a40;
+        margin: 20px;
+        font-size: 35px;
+        
+      }
+
+      p{
+        font-size: 30px;
+      }
+      .screen{
+  margin-bottom: 700px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="screen" >
+    <div class="container">
+      <div class="description-tile">
+        <p class="discription-para">{{ lecturer.description|safe }}</p>
+      </div>
+      <center>
+      <div class="lect-name-tile">
+        <img class="lect-img" src="{{ lecturer.picture.url }}" alt="lecturer image" />
+        <h1 class="lctname">{{ lecturer.name }}</h1>
+
+        <h2 class="lect-sub">{{ lecturer.subject }}</h2>
+      </div>
+    </center>
+    </div>
+  </div>
+    {% include "footer.html" %}
+  </body>
+</html>
+
+
+
+
+
+
+
+
+<!--
+
+
+
+<div>
+<link rel="stylesheet" type="text/css" href='{% static "class/session.css" %}'>
+
+{% if user.is_authenticated %}
+<h1>Conducted sessions</h1>
+<div class="grid-container">
+{% for session in sessions %}
+{% if session.lecturer == lecturer.name %}
+    <div class="grid-item">
+        <a id="link" href="{% url 'class' session.id %}"> {{ session.name }} </a>
+        <img src='{% static "css/tbn.jpg" %}' class="thumbnail" />
+        <h3 id="lect">lecturer: {{ session.lecturer }}</h3><br>
+        <h3 id="time">Time : {{ session.time }}</h3>
+    </div>
+{% endif %}
+{% endfor %}
+{% endif %}
+</div>
+</div>
+
+
+{% endblock %}
+-->

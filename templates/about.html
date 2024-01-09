@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<title>About</title>
+{% include "nav.html" %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>About us</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700;800;1000&display=swap"
+      rel="stylesheet"
+    />
+    {% load static %}
+
+<link rel="stylesheet" type="text/css" href='{% static "css/about.css" %}'>
+<style>
+  header{
+    height: 1000px;
+  }
+</style>
+  </head>
+  <body>
+    <header>
+      <div class="about-section-container">
+        <div class="about-section">
+          <p class="a-1">a</p>
+          <p class="bout">bout</p>
+          <p class="lo">lo</p>
+          <p class="para">
+            As our modern society has gone through changes physical education has become a thing of the past
+            as we embrace the future of education which is E-learning or Internet based learning this future direction of
+            education is what ALO offers to you...
+
+
+            
+          </p>
+        </div>
+        <div class="img-1"></div>
+        <div class="img-2"></div>
+        <div class="img-5"></div>
+      </div>
+      <div class="blank-space"></div>
+    </header>
+  </body>
+</html>
+{% include "footer.html" %}
+
+
+
+{% endblock %}

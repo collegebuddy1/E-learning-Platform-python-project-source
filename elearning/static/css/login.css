@@ -1,0 +1,49 @@
+body {
+    background-image: url(bg6.jpg);
+    padding-top: 50px;
+}
+.grid{
+    height: auto;
+    width: 40%;
+    display: block;
+    background-color: #ffffff;
+    border-radius: 30px;
+    font-size:30px ;
+    padding-top: 20px;
+    font-family: "Comfortaa", sans-serif;
+    padding-bottom: 10px;
+}
+
+input[type=text],input[type=password], select {
+    width: 30%;
+    padding: 15px 15px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid rgb(203, 180, 180);
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 20px;
+  }
+
+  #link {
+    background-color: #7950f2;
+    border: none;
+    color: white;
+    padding: 16px 15%;
+    border-radius: 15px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: "Comfortaa", sans-serif;
+    padding-top: 20px;
+
+
+}
+
+#link:hover {
+    color: black;
+    background-color: #b197fc;
+
+}
+

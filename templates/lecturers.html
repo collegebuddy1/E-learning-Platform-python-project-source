@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% block content %}
+<title>Lecturers</title>
+{% include "nav.html" %}
+
+<center><h1>Our team</h1></center>
+
+<style>
+  body{
+    font-family: "comfortaa", sans-serif;
+  }
+
+
+    .grid-container{
+        display: grid;
+        grid-template-columns: 500px 500px;
+        grid-template-rows: 550px ;
+        justify-content: space-evenly;
+        row-gap: 60px;
+        column-gap: 60px;
+        padding: 20px;
+        font-family: "comfortaa", sans-serif;
+
+    }
+
+    .grid-item{
+        text-align: center;
+        background-color: #b197fc;
+        border-radius: 20px;
+        padding-top: 20px;
+
+    }
+
+    #anchor{
+        display: block;
+        background-color: #7950f2;
+        text-decoration: none;
+        color: black;
+        font-size: 25px;
+        font-family: "comfortaa", sans-serif;
+        padding:5px 5px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    h3{
+      background-color: none;
+      font-size: 25px;
+      font-family: "comfortaa", sans-serif;
+      padding-bottom: 4px;
+    }
+
+    #anchor:hover{
+        background-color: #bca6fd;
+        color: white;
+        animation: spring 300ms ease-out;
+  text-shadow: 0 -1px 0 #fbd6cf;
+	font-weight: bold;
+    }
+
+
+
+    img{
+        padding-bottom: 10px;
+        border-radius: 20px;
+        width:300px ;
+        height: auto;
+    }
+
+    @media (max-width: 1300px) {
+ .grid-container  {
+  grid-template-columns:  auto auto;
+  grid-template-rows: auto;
+  }
+}
+@media (max-width:850px) {
+  .grid-container  {
+   grid-template-columns:  auto;
+   grid-template-rows:  auto;
+  }
+
+}
+
+
+</style>
+
+<div class="grid-container">
+{% for lect in lecturers %}
+    <div class="grid-item" >
+        <img src="{{ lect.picture.url }}">
+        <a id="anchor" href="{% url 'lecturer' lect.id %}" ><h2>{{ lect.name }}</h2></a>
+        <h3>{{ lect.subject }}</h3>
+
+    </div>
+    {% endfor %}
+</div>
+{% include "footer.html" %}
+
+
+
+
+
+{% endblock %}

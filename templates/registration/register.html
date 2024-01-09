@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% block content %}
+<title>Register</title>
+{% load static %}
+<link rel="stylesheet" type="text/css" href='{% static "css/register.css" %}'>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700;800;1000&display=swap" rel="stylesheet"/>
+
+
+<style>
+  h1{
+    font-family: "Comfortaa", sans-serif;
+    font-size: 35px;
+    align-self: center;
+}
+.grid{
+    height: 50%;
+    width: 30%;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 30px;
+    font-size:30px ;
+    padding:30px;
+    font-family: "Comfortaa", sans-serif;
+    text-align: center;
+}
+
+input[type=text],input[type=password], select {
+    width: 300px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid rgb(203, 180, 180);
+    border-radius: 50px;
+    box-sizing: border-box;
+    font-size: 20px;
+    align-self: center;
+    background-color: rgb(245, 250, 255);
+  }
+
+  #link {
+    background-color: #7950f2;
+    border: none;
+    color: white;
+    padding: 16px 50px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: "Comfortaa", sans-serif;
+
+
+}
+
+#link:hover {
+    color: black;
+    background-color: #b197fc;
+
+}
+
+.flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    row-gap:none;
+}
+
+img{
+    height: 100px;
+    width: auto;
+}
+
+ul{
+  list-style: none;
+  font-size: 25px;
+  padding-top: 10px;
+}
+</style>
+
+<body>
+  <center><h1>Register User</h1></center>
+<center>
+<div class="grid">
+    <form method="post">
+        {% csrf_token %}
+        <img src="{% static 'css/logo.png' %}" alt="logo">
+        <div class="flex">
+          <h3>Username</h3>
+          {{ form.username }}
+        </div>
+        <div class="flex">
+          <ul>
+            <li>Password</li>
+            <li>must have at least 8 characters</li>
+            <li>Cannot be  common</li>
+            <li>Cannot be entirely numeric</li>
+          </ul>
+          <h3>Password</h3>
+          {{ form.password1 }}
+        </div>
+        <div class="flex">
+          <h3>Confirm Password</h3>
+          {{ form.password2 }}
+        </div>
+        <center><button type="submit" id="link">Sign Up</button></center>
+    </form>
+</div>
+</center>
+</body>
+
+
+{% endblock %}
+
+<!--
+  Your password can’t be too similar to your other personal information.
+Your password must contain at least 8 characters.
+Your password can’t be a commonly used password.
+Your password can’t be entirely numeric.
+-->
